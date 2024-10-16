@@ -1,0 +1,166 @@
+<!doctype html>
+<html>
+<head>
+    <title>STUDENT REGISTRATION FORM</title>
+    <style>
+        table, th, td {
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 10px;
+        }
+        body {
+            background-color: #bf4e85;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 2px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+        .form-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="reset"]:hover {
+            background-color: #e53935;
+        }
+    </style>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            alert("Your application has been submitted!");
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="handleSubmit(event)">
+        <img align="right" src="boy.jpg" width="200" height="200">
+        <h1 style="color:violet;"><u><center>STUDENT REGISTRATION FORM</center></u></h1>
+        
+        <label>FIRST NAME</label>
+        <input type="text" id="NAME" value="">
+        <br><br>
+        <label>LAST NAME</label>
+        <input type="text" id="NAME" value="">
+        <br><br>
+        <label>DATE OF BIRTH</label>
+        <input type="date" id="DATE OF BIRTH" value="">
+        <br><br>
+        <label>EMAIL ID</label>
+        <input type="email" id="EMAIL ID" value="">
+        <br><br>
+        <label>MOBILE NUMBER</label>
+        <input type="tel" id="MOBILE NUMBER" value="">
+        <br><br>
+        <label>GENDER</label>
+        <input type="radio" id="male" value="">Male
+        <input type="radio" id="female" value="">Female
+        <br><br>
+        <label>ADDRESS</label>
+        <textarea id="address" rows="3"></textarea>
+        <br><br>
+        <label>CITY</label>
+        <input type="text" id="CITY" value="">
+        <br><br>
+        <label>PIN CODE</label>
+        <input type="text" id="PIN CODE" value="">
+        <br><br>
+        <label>STATE</label>
+        <input type="text" id="STATE" value="">
+        <br><br>
+        <label>COUNTRY</label>
+        <input type="text" id="COUNTRY" value="">
+        <br><br>
+        <label>HOBBIES</label>
+        <input type="checkbox" name="HOBBIES" value="Drawing">
+        <label>Drawing</label>
+        <input type="checkbox" name="HOBBIES" value="Singing">
+        <label>Singing</label>
+        <input type="checkbox" name="HOBBIES" value="Dancing">
+        <label>Dancing</label>
+        <br><br>
+        <label>QUALIFICATION</label>
+        <br><br>
+        <table>
+            <tr>
+                <th>S.I.No.</th>
+                <th>Examination</th>
+                <th>Board</th>
+                <th>Percentage</th>
+                <th>Year of Passing</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Class X</td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Class XII</td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Bachelor</td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Master's</td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+                <td><textarea></textarea></td>
+            </tr>
+        </table>
+        <br><br>
+        <label>COURSES APPLIED FOR</label>
+        <input type="radio" id="BCA" value="">BCA
+        <input type="radio" id="B.COM" value="">B.COM
+        <input type="radio" id="B.SC" value="">B.SC
+        <input type="radio" id="B.A" value="">B.A
+        <br><br>
+        <center>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </center>
+    </form>
+</body>
+</html>
