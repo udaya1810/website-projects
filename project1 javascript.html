@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRATION FORM</title>
+    <style>
+        body {
+            background-color: #bf4e85;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+        }
+        form {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 2px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: inline-block;
+            width: 150px;
+            margin-right: 10px;
+            vertical-align: top;
+        }
+        .form-buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input[type="submit"], input[type="reset"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        input[type="reset"] {
+            background-color: #f44336;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        input[type="reset"]:hover {
+            background-color: #e53935;
+        }
+    </style>
+   <body>
+        <form id="registration-form" onsubmit="return validateForm(event)">
+        <h1 style="color:violet;"><u><center> REGISTRATION FORM</center></u></h1>
+        <br><br>
+        <label>FIRST NAME</label>
+        <input type="text" id="FIRST-NAME" name="firstName" >
+        <br><br><br>
+        <label>LAST NAME</label>
+        <input type="text" id="LAST-NAME" name="lastName">
+        <br><br><br>
+        <label>EMAIL ID</label>
+        <input type="email" id="EMAIL-ID" name="email">
+        <br><br><br>
+        <label>MOBILE NUMBER</label>
+        <input type="tel" id="MOBILE-NUMBER" name="mobile">
+        <br><br><br>
+        <label>PASSWORD</label>
+        <input type="password" id="PASSWORD" name="password">
+        <br><br><br>
+        <label> CONFIRM PASSWORD</label>
+        <input type="password" id="CONFIRM-PASSWORD" name="confirmPassword">
+        <br><br><br>
+        <label>ADDRESS</label>
+        <textarea id="address" name="address" rows="3"></textarea>
+        <br><br><br>
+        <label>DATE OF BIRTH</label>
+        <input type="date" id="DATE-OF-BIRTH" name="dob">
+        <br><br><br>
+        <label>GENDER</label>
+        <input type="radio" id="male" name="gender" value="Male">Male
+        <input type="radio" id="female" name="gender" value="Female">Female
+        <br><br><br>
+        <label>QUALIFICATION</label>
+        <select id="QUALIFICATION">
+        <option value="" disabled selected>Select a Qualification</option>
+        <option value ="10th">10th</option>
+        <option value ="12th">12th</option>
+        <option value ="Bachelor Degree">Bachelor Degree</option>
+        <option value ="Master Degree">Master Degree</option>
+        <option value ="Doctorate">Doctorate</option>
+        </select>
+        <br><br><br>
+        <label>LANGUAGES</label>
+        <select id="LANGUAGES">
+            <option value="" disabled selected>Select a Language</option>
+            <option value ="ENGLISH">ENGLISH</option>
+            <option value ="TAMIL">TAMIL</option>
+            <option value ="MALAYALAM">MALAYALAM</option>
+            <option value ="HINDI">HINDI</option>
+            </select>
+        <br><br><br>
+        <label>PLACE</label>
+        <input type="text" id="PLACE" name="place">
+        <br><br><br>
+        <label>DATE</label>
+        <input type="date" id="DATE" name="date">
+        <br><br><br>
+        <label>COURSE NAME</label>
+        <select id="COURSE-NAME">
+        <option value="" disabled selected>Select a Course</option>
+        <option value ="B.SC">B.SC</option>
+        <option value ="BBA">BBA</option>
+        <option value ="M.SC">M.SC</option>
+        <option value ="MBA">MBA</option>
+        </select>
+        <br><br><br>
+        <label>DURATION</label>
+        <input type="text" id="DURATION" name="duration">
+        <br><br><br>
+        <label>COLLEGE NAME</label>
+        <select id="COLLEGE-NAME">
+        <option value="" disabled selected>Select a College</option>
+        <option value ="Amrita Vishwa Vidyapeetham, Kochi">Amrita Vishwa Vidyapeetham, Kochi</option> 
+        <option value ="IIM KozhikodeE">IIM Kozhikode</option>
+        <option value ="Sacred Heart College, Thevara">Sacred Heart College, Thevara</option>
+        <option value ="Chinmaya Vishwa Vidyapeeth">Chinmaya Vishwa Vidyapeeth</option>
+        <option value ="KMM college of Arts and Science">KMM college of Arts and Science</option>
+        </select>
+        <br><br><br>
+        <label>UNIVERSITY NAME</label>
+        <select id="UNIVERSITY-NAME">
+        <option value="" disabled selected>Select a University</option>
+        <option value ="University of Kerala">University of Kerala</option>
+        <option value ="University of Calicut"> University of Calicut</option>
+        <option value ="Shri Krishna University,Thrissur"> Shri Krishna University,Thrissur</option>
+        <option value ="Kannur University "> Kannur University </option>
+        </select>
+        <br><br><br>
+        <label>PHOTO</label>
+        <input type="file" id="PHOTO">
+        <br><br><br>
+
+        <center>
+            <div class="form-buttons">
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+            </div>
+        </center>
+    </form>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+    
+            let firstName = document.getElementById("FIRST-NAME").value.trim();
+            let firstnameRegex = /^[A-Za-z]{1,15}$/;
+            if (!firstnameRegex.test(firstName)) {
+                alert("First Name should only contain alphabets and be 1-15 characters long");
+                return false;
+            }
+    
+            let lastName = document.getElementById("LAST-NAME").value.trim();
+            let lastnameRegex = /^[A-Za-z]{1,15}$/;
+            if (!lastnameRegex.test(lastName)) {
+                alert("Last Name should only contain alphabets and be 1-15 characters long");
+                return false;
+            }
+    
+            let email = document.getElementById("EMAIL-ID").value.trim();
+            let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+    
+            let mobile = document.getElementById("MOBILE-NUMBER").value.trim();
+            let mobileRegex = /^[6-9]\d{9}$/;
+            if (!mobileRegex.test(mobile)) {
+                alert("Please enter a valid 10-digit mobile number.");
+                return false;
+            }
+    
+            let password = document.getElementById("PASSWORD").value.trim();
+            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@.#$!%*?&])[A-Za-z\d@.#$!%*?&]{8,15}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password must be at least 8 characters long, include uppercase, lowercase, number, and special character.");
+                return false;
+            }
+    
+            let confirmPassword = document.getElementById("CONFIRM-PASSWORD").value;
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password do not match.");
+                return false;
+            }
+    
+            let address = document.getElementById("address").value.trim();
+            if (address.length === 0) {
+                alert("Please enter your address.");
+                return false;
+            }
+    
+            let dob = document.getElementById("DATE-OF-BIRTH").value;
+            if (dob === "" || new Date(dob) > new Date()) {
+                alert("Please enter a valid Date of Birth (not in the future).");
+                return false;
+            }
+    
+            let gender = document.querySelector('input[name="gender"]:checked');
+            if (!gender) {
+                alert("Please select your Gender.");
+                return false;
+            }
+    
+            let qualification = document.getElementById("QUALIFICATION").value;
+            let qualificationList = ["10th", "12th", "Bachelor Degree", "Master Degree", "Doctorate"];
+            if (!qualification || !qualificationList.includes(qualification)) {
+                alert("Please select a valid Qualification");
+                return false;
+            }
+    
+            let languages = document.getElementById("LANGUAGES").value;
+            let languageList = ["ENGLISH", "TAMIL", "MALAYALAM", "HINDI"];
+            if (!languages || !languageList.includes(languages)) {
+                alert("Please select a valid Language");
+                return false;
+            }
+    
+            let place = document.getElementById("PLACE").value.trim();
+            if (place.length === 0) {
+                alert("Place cannot be empty");
+                return false;
+            }
+    
+            let date = document.getElementById("DATE").value;
+            if (date === "" || new Date(date) > new Date()) {
+                alert("Please enter a valid Date (not in the future).");
+                return false;
+            }
+    
+            let courseName = document.getElementById("COURSE-NAME").value;
+            let courseList = ["B.SC", "BBA", "M.SC", "MBA"];
+            if (!courseName || !courseList.includes(courseName)) {
+                alert("Please select a valid Course Name");
+                return false;
+            }
+    
+            let duration = document.getElementById("DURATION").value.trim();
+            if (duration.length === 0) {
+                alert("Duration must not be empty and should be a valid number");
+                return false;
+            }
+    
+            let collegeName = document.getElementById("COLLEGE-NAME").value;
+            let collegeList = ["Amrita Vishwa Vidyapeetham, Kochi", "IIM Kozhikode", "Sacred Heart College, Thevara","Chinmaya Vishwa Vidyapeeth", "KMM college of Arts and Science"];
+            if (!collegeName || !collegeList.includes(collegeName)) {
+                alert("Please select a valid College Name");
+                return false;
+            }
+    
+            let universityName = document.getElementById("UNIVERSITY-NAME").value;
+            let universityList = ["University of Kerala", "University of Calicut", "Kannur University","Shri Krishna University,Thrissur" ];
+            if (!universityName || !universityList.includes(universityName)) {
+                alert("Please select a valid University Name");
+                return false;
+            }
+    
+            let photo = document.getElementById("PHOTO");
+            if (!photo.files.length) {
+                alert("Please upload a photo");
+                return false;
+            }
+    
+            alert("Registration successful");
+            return true;
+
+        }
+    </script>
+</body>
+</html>
